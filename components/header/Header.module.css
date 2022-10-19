@@ -1,0 +1,6 @@
+@media (min-width: 650px) {
+	.hidden {
+		display: none;
+		color: red;
+	}
+}
