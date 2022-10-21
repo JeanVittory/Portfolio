@@ -1,8 +1,12 @@
+import { Container, Text, useTheme } from '@nextui-org/react';
 import type { NextPage } from 'next';
 import Head from 'next/head';
+import Image from 'next/image';
 import { Layout } from '../components/layout/Layout';
+import styles from '../styles/Home.module.css';
 
 const Home: NextPage = () => {
+	const { theme, isDark } = useTheme();
 	return (
 		<div>
 			<Head>
@@ -12,7 +16,27 @@ const Home: NextPage = () => {
 			</Head>
 
 			<Layout>
-				<h1></h1>
+				<Container as='main' className={`${styles.generalContainer}`}>
+					<section className={`${styles.sectionProfile}`}>
+						<Image
+							alt='My photo profile'
+							src={'/profile.jpeg'}
+							width={'600'}
+							height={'400'}
+							className={`${styles.imageProfile}`}
+						/>
+						<div className={`${styles.typeWriteFxContainer1}`}>
+							<Text span className={`${styles.typeWriteFx1}`} data-dark={isDark ? 'true' : 'false'}>
+								Hello, Im Jean a software
+							</Text>
+						</div>
+						<div className={`${styles.typeWriteFxContainer2}`}>
+							<Text span className={`${styles.typeWriteFx2}`} data-dark={isDark ? 'true' : 'false'}>
+								developer from Colombia.
+							</Text>
+						</div>
+					</section>
+				</Container>
 			</Layout>
 		</div>
 	);

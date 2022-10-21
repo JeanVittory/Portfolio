@@ -1,7 +1,6 @@
-import { Container, Navbar, Text } from '@nextui-org/react';
+import { Container, Navbar, Text, useTheme } from '@nextui-org/react';
 import SwitchTheme from '../switch/Switch';
 import styles from './Header.module.css';
-import { useTheme } from '@nextui-org/react';
 import Image from 'next/image';
 
 export default function Header(): JSX.Element {
@@ -13,6 +12,7 @@ export default function Header(): JSX.Element {
 			<Container
 				as={'nav'}
 				fluid
+				responsive
 				display='flex'
 				justify='space-between'
 				alignItems='center'
